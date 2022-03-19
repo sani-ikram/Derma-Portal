@@ -1,0 +1,176 @@
+/*
+* Projects
+*/
+
+//
+// Projects grid
+//
+.project-grid {
+	display: flex;
+	padding: 10px;
+	background-size: cover;
+	background-position: center center;
+	position: relative;
+	z-index: 2;
+	.basic-title {
+		position: absolute;
+		z-index: -1;
+		left: 50%;
+		transform: translateX(-50%);
+		bottom: 10%;
+	}
+
+	.inner {
+		padding: 20px 15px;
+		background: $primary;
+		opacity: 1;
+		text-align: center;
+		img {
+
+
+		}
+	}
+
+	.title,
+	.exeption {
+		color: $white;
+	}
+
+	.title {
+		font-weight: 700;
+	}
+
+	.button {
+		min-width: 112px;
+	}
+
+	* + .title { margin-top: 10px; }
+	* + .exeption { margin-top: 12px; }
+	* + .button { margin-top: 20px; }
+
+	// Mega large ≥1600px
+	@include media-breakpoint-up(xxl) {
+		.inner {
+			padding: 33px 59px 46px;
+		}
+
+		* + .title { margin-top: 39px; }
+		* + .button { margin-top: 34px; }
+	}
+
+	.desktop & {
+		.inner {
+			transition: .3s;
+			opacity: 0;
+		}
+
+		&:hover {
+			.inner {
+				opacity: 1;
+			}
+		}
+	}
+}
+
+.project-grid-2 {
+	box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.15);
+}
+
+//
+// Projects grid
+//
+.project-masonry {
+	position: relative;
+	background-size: cover;
+	background-position: center center;
+	min-height: 300px;
+
+	> img {
+		width: 100%;
+	}
+
+	.inner {
+		position: absolute;
+		left: 0;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		padding: 20px;
+		background-image: linear-gradient(180deg, transparent -30%, rgba($black, .6));
+	}
+
+	.project-masonry-footer {
+		margin-top: 30px;
+	}
+
+	.title,
+	.exeption {
+		color: $white;
+	}
+
+	.title {
+		text-transform: uppercase;
+
+		a:hover,
+		a:focus {
+			color: $secondary;
+		}
+	}
+
+	.exeption {
+		max-width: 400px;
+	}
+
+	.button {
+		min-width: 112px;
+	}
+
+	* + .title { margin-top: 10px; }
+	* + .exeption { margin-top: 12px; }
+	* + .button { margin-top: 20px; }
+
+	// Large ≥992px
+	@include media-breakpoint-up(xl) {
+		min-height: 398px;
+
+		&-1 {
+			 min-height: 604px;
+		}
+
+		&-2 {
+			 min-height: 627px;
+		}
+
+		&-3 {
+			 min-height: 421px;
+		}
+
+		&-4 {
+			 min-height: 401px;
+		}
+	}
+
+	// Mega large ≥1600px
+	@include media-breakpoint-up(xl) {
+		.inner {
+			padding: 38px 65px 61px;
+		}
+
+		* + .title { margin-top: 30px; }
+		* + .button { margin-top: 34px; }
+	}
+
+	.desktop & {
+		.inner {
+			transition: .3s;
+			opacity: 0;
+
+			&:hover {
+				opacity: 1;
+			}
+		}
+	}
+}

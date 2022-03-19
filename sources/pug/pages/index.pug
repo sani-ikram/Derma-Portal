@@ -1,0 +1,323 @@
+extends  ../_skeleton
+
+//- Includes
+include ../components/_ui-pagination
+
+block variables
+	- var activeCategory = 'home'
+	- var pageName = 'Home'
+
+block page
+	section.section.section-relative.section-header.bg-image#home(style="background: url(images/bg-index.png); background-size: cover ")
+		// Page Header
+		include ../sections/_header-aside
+
+		// Preview section
+		section.section.context-dark.section-jumbotron
+			.panel-left
+				+logo
+
+
+				ul.list.custom-list.wow.fadeInUp
+					li: a.icon.icon-sm.icon-gray-filled.icon-circle.mdi.mdi-behance(href="#")
+					li: a.icon.icon-sm.icon-gray-filled.icon-circle.mdi.mdi-facebook(href="#")
+					li: a.icon.icon-sm.icon-gray-filled.icon-circle.mdi.mdi-instagram(href="#")
+			.section-fullheight
+				.section-fullheight-inner.section-md.text-center.text-lg-left
+					.container
+						.row.justify-content-center.justify-content-lg-start
+							.col-md-10.offset-lg-1.col-lg-8.offset-xl-1.col-xl-8.offset-xxl-2.col-xxl-7.offset-top-0-xxl-225
+								.jumbotron-custom-1
+									.text-1.wow.fadeInRight Welcome to Medina
+									.offset-top-40.wow.fadeInLeft
+										h2 Leading
+										h2 Pharmaceutical
+										h2 Company
+									p.title-text.wow.fadeInRight We are a global pharmaceutical company committed to setting new standards in health care and providing the world’s 7 billion people access to high-quality medicine.
+			ul.project-list
+				li.bg-image(style="background-image: url(images/project-1-671x214.jpg)")
+					a(href="#") Quality Pharmaceuticals
+				li.bg-image(style="background-image: url(images/project-2-671x214.jpg)")
+					a(href="#") Products
+				li.bg-image(style="background-image: url(images/project-3-671x214.jpg)")
+					a(href="#") Top-Notch Equipment
+
+
+
+	section.section.section-lg.bg-default.text-center.text-sm-left.section-lined#about
+		.container.container-lined
+			.row
+				.col-md-4
+				.col-md-4
+				.col-md-4
+		.container
+			.row.row-40
+				.col-lg-9
+					.row.row-30.row-xxl-85
+						.col-sm-6.col-md-4.wow.fadeInRight
+							h5 Tablets
+							ul.list-xs.list-modern
+								li: a.link-item.link-no-color(href="#") Coated tablets
+								li: a.link-item.link-no-color(href="#") Uncoated tablets
+								li: a.link-item.link-no-color(href="#") Chewing tablets
+
+
+						.col-sm-6.col-md-4.wow.fadeInRight
+							h5 Syrups
+							ul.list-xs.list-modern
+								li: a.link-item.link-no-color(href="#") Antitussives
+								li: a.link-item.link-no-color(href="#") Expectorants
+								li: a.link-item.link-no-color(href="#") Antihistamines
+
+						.col-sm-6.col-md-4.wow.fadeInRight
+							h5 Powders
+							ul.list-xs.list-modern
+								li: a.link-item.link-no-color(href="#") For internal use
+								li: a.link-item.link-no-color(href="#") For external use
+								li: a.link-item.link-no-color(href="#") Divided powders
+
+						.col-sm-6.col-md-4.wow.fadeInLeft
+							+jpg('index-image-1-229x170')
+
+						.col-sm-6.col-md-4.wow.fadeInLeft
+							+jpg('index-image-2-229x170')
+
+						.col-sm-6.col-md-4.wow.fadeInLeft
+							+jpg('index-image-3-229x170')
+
+				.col-lg-3.wow.fadeInRight
+					.heading-4.font-weight-bold.text-lg-right What we do
+					p.text-lg-right.paragraph-custom-2 At Medina, we aim to develop and manufacture unique and reliable medicine and drugs that help people successfully treat a wide range of diseases known to mankind and healthcare industry.
+					.img-wrap-1
+						.button-wrap-1.text-lg-right
+							a(href="#").button.button-default View more
+
+
+	// Blurb minimal
+	section.section.section-lg.bg-gray-100.section-lined
+		.container.container-lined
+			.row
+				.col-md-4
+				.col-md-4
+				.col-md-4
+		.container
+			.row.row-40
+				.col-sm-6.col-md-4.wow.fadeInUp
+					// Blurb minimal
+					+blurb-minimal({
+						icon: 'linearicons-cube',
+						title: 'Modern Packaging',
+						exeption: 'All our medicine is provided with modern and durable packaging.'
+					})
+
+				.col-sm-6.col-md-4.wow.fadeInUp(data-wow-delay="0.2s")
+					// Blurb minimal
+					+blurb-minimal({
+						icon: 'linearicons-bandages',
+						title: 'New Technologies',
+						exeption: 'We use new and innovative technologies in our work.'
+					})
+
+				.col-sm-6.col-md-4.wow.fadeInUp(data-wow-delay="0.4s")
+					// Blurb minimal
+					+blurb-minimal({
+						icon: 'linearicons-beaker',
+						title: 'Unique Approach',
+						exeption: 'Our approach combines dedication and professionalism.'
+					})
+
+	// GMP
+	section.section.section-lg.bg-default.section-lined#quality-control
+		.container.container-lined
+			.row
+				.col-md-4
+				.col-md-4
+				.col-md-4
+		.container
+			.row.row-40.justify-content-center
+				.col-lg-7.col-xl-8
+					.row.no-gutters
+						.col-sm-6.wow.fadeInLeft.text-center.align-items-center
+							.box-text.bg-gray-100
+								p.title.text-black  GMP
+								p.text.text-black  Good Manufacturing Practice
+						.col-sm-6.wow.fadeInRight.text-center
+							+jpg('index-image-4-390x332')
+						.col-sm-6.wow.fadeInLeft.text-center(data-wow-delay="0.2s")
+							+jpg('index-image-5-390x332')
+						.col-sm-6.wow.fadeInRight(data-wow-delay="0.2s")
+							.box-text.bg-gray-100
+								p.title.text-center.text-black  ISO
+								p.text.text-black  22000:2005
+
+				.col-lg-5.col-xl-4
+					.row.row-30.row-xxl-55.justify-content-end
+						.col-sm-6.col-lg-9.col-xl-10.text-lg-right
+							h4.font-weight-bold Quality <br> Control
+							p.big-text We alway ensure comprehensive quality assurance and control for drugs and medicine we produce.
+							.divider.divider-2.d-none.d-lg-block
+						.col-sm-6.col-lg-8.col-xl-7.counter-box
+							+counter-minimal-2({
+								value: '36',
+								postfix: '',
+								title: 'hectares of production area'
+							})
+							ul.list-marked.list-marked-big
+								li Accredited laboratory
+								li More than 20 000 tests in 2018
+								li More than 150 medicines
+
+	// New products
+	section.section.section-lg.bg-gray-100.section-lined#products
+		.container.container-lined
+			.row
+				.col-md-4
+				.col-md-4
+				.col-md-4
+		.container.container-custom-width
+			h4.text-center.font-weight-bold.offset-bottom-xl-10 New products
+			.row.row-custom-width.row-30.row-xxl-100.row-flex
+				.col-sm-6.col-lg-4.wow.fadeInRight
+					+project-grid-2({
+						imgBackground: 'projects-1-518x373',
+						basicTitle: 'Procardia',
+						imgLogo: 'projects-logo-102x96',
+						title: 'Procardia',
+						exeption: 'Procardia is used for treating certain kinds of chest pain and widening the arteries.',
+						link: '#'
+					})
+
+				.col-sm-6.col-lg-4.wow.fadeInRight(data-wow-delay="0.2s")
+					+project-grid-2({
+						imgBackground: 'projects-2-518x373',
+						basicTitle: 'Accutane',
+						imgLogo: 'projects-logo-102x96',
+						title: 'Accutane',
+						exeption: 'Accutane is a retinoid used for the treatment of severe acne or other related diseases.',
+						link: '#'
+					})
+
+				.col-sm-6.col-lg-4.wow.fadeInRight(data-wow-delay="0.4s")
+					+project-grid-2({
+						imgBackground: 'projects-3-518x373',
+						basicTitle: 'Claritin',
+						imgLogo: 'projects-logo-102x96',
+						title: 'Claritin',
+						exeption: 'Claritin is indicated for the relief of nasal and non-nasal symptoms of seasonal allergic rhinitis.',
+						link: '#'
+					})
+
+				.col-sm-6.col-lg-4.wow.fadeInRight(data-wow-delay="0.2s")
+					+project-grid-2({
+						imgBackground: 'projects-4-518x373',
+						basicTitle: 'Cardizem',
+						imgLogo: 'projects-logo-102x96',
+						title: 'Cardizem',
+						exeption: 'Cardizem is used for treating supraventricular tachycardia, a rhythm disturbance of the heart.',
+						link: '#'
+					})
+
+				.col-sm-6.col-lg-4.wow.fadeInRight(data-wow-delay="0.4s")
+					+project-grid-2({
+						imgBackground: 'projects-5-518x373',
+						basicTitle: 'NasalCrom',
+						imgLogo: 'projects-logo-102x96',
+						title: 'NasalCrom',
+						exeption: 'NasalCrom is a nasal allergy symptom controller that can prevent nasal allergy symptoms.',
+						link: '#'
+					})
+
+				.col-sm-6.col-lg-4.wow.fadeInRight(data-wow-delay="0.6s")
+					+project-grid-2({
+						imgBackground: 'projects-6-518x373',
+						basicTitle: 'AyurSlim',
+						imgLogo: 'projects-logo-102x96',
+						title: 'AyurSlim',
+						exeption: 'AyurSlim has a favorable effect on weight reduction and lipid profiles.',
+						link: '#'
+					})
+
+			.button-wrap-1.text-center
+				a(href="#").button.button-default View More
+
+	// News
+	section.section.section-lg.bg-default.section-lined#news
+		.container.container-lined
+			.row
+				.col-md-4
+				.col-md-4
+				.col-md-4
+		.container
+			h4.text-center.font-weight-bold.offset-bottom-xl-10 News
+			.row.row-40.justify-content-center
+				.col-sm-6.col-md-4.wow.fadeInUp
+					.news-box
+						a(href='#'): .media
+							+jpg('news-1-325x220')
+							.subtitle
+								p News
+						.text.offset-top-20
+							a(href='#'): p.font-weight-regular  Top 10 New Pharmaceutical Products
+							p.small-2.font-weight-regular  May 10, 2019
+				.col-sm-6.col-md-4.wow.fadeInUp
+					.news-box
+						a(href='#'): .media
+							+jpg('news-2-325x220')
+							.subtitle
+								p News
+						.text.offset-top-20
+							a(href='#'): p.font-weight-regular  How We Produce Top Quality Medicals
+							p.small-2.font-weight-regular  May 10, 2019
+				.col-sm-6.col-md-4.wow.fadeInUp
+					.news-box
+						a(href='#'): .media
+							+jpg('news-3-325x220')
+							.subtitle
+								p News
+						.text.offset-top-20
+							a(href='#'): p.font-weight-regular The Role of Quality Control
+							p.small-2.font-weight-regular  May 10, 2019
+
+
+	// Get in touch
+	section.section.section-md.wow.fadeIn.section-lined.bg-gray-100#contacts(data-wow-delay="0.2s")
+		.container.container-lined
+			.row
+				.col-md-4
+				.col-md-4
+				.col-md-4
+		.container
+			h4.font-weight-bold Get in touch
+			p.big Feel free to contact our specialists to find out more about our prices and services. <br class="d-none d-lg-inline">We are always ready to answer your questions.
+			// RD Mailform
+			form.rd-form.rd-mailform.form-boxed(data-form-output='form-output-global', data-form-type='contact', method='post', action='bat/rd-mailform.php')
+				.row.row-50
+					.col-lg-4
+						.form-wrap.form-wrap-icon
+							.form-icon.mdi.mdi-account-outline
+							input#contact-name.form-input(type='text' name='name' data-constraints='@Required')
+							label.form-label(for='contact-name') Name
+
+					.col-lg-4
+						.form-wrap.form-wrap-icon
+							.form-icon.mdi.mdi-email-outline
+							input#contact-email.form-input(type='email' name='email' data-constraints='@Email @Required')
+							label.form-label(for='contact-email') E-mail
+
+					.col-lg-4
+						.form-wrap.form-wrap-icon
+							.form-icon.mdi.mdi-phone
+							input#contact-phone.form-input(type='text' name='phone' data-constraints='@Numeric')
+							label.form-label(for='contact-phone') Phone
+
+					.col-12
+						.form-wrap.form-wrap-icon
+							.form-icon.mdi.mdi-message-outline
+							label.form-label(for='contact-message') Message
+							textarea#contact-message.form-input(name='message' data-constraints='@Required')
+
+					.col-md-12
+						button.button.button-default(type='submit') Send
+
+	// Page Footer
+	include ../sections/_footer-classic
